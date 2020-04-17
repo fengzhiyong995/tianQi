@@ -1,0 +1,44 @@
+/**index.wxss**/
+:root{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+  margin: 0;padding: 0 5px;
+}
+.container .weather{
+  width: 100%;
+}
+.container .taday{
+  width: 100%;height: 100px;background-color: aqua;margin-bottom: 10px;display: flex;align-items: center;
+  border-radius: 10px;justify-content: space-between;box-sizing: border-box;
+}
+.container .taday .tL{
+  height: 45px;font-weight: 520;font-size: 16px;
+}
+.container .taday .week{
+    font-size: 14px;font-weight: 500;
+}
+.container .taday .tR{
+height: 70px;font-size: 26px;font-weight: 520;
+}
+.container .taday .qW{
+  font-size: 16px;font-weight: 500;
+}
+.container .next{
+  width: 100%;height: 80px;background-color: rgb(40, 107, 161);margin-bottom: 3px;border-radius: 7px;display: flex;align-items: center;justify-content: space-between;
+}
+.container .next .tL{
+height: 35px;font-size: 16px;font-weight: 400;line-height: 35px;
+}
+.container .next .tR{
+  height: 60px;font-size: 16px;font-weight: 400;
+}
+.tL{
+  display: flex;box-sizing: border-box;width: 40%;flex-direction: column;margin: 0 0 0 20px;
+}
+.tR{
+  width: 55%;display: flex;flex-direction: column;box-sizing: border-box;text-align: right;font-weight: 400;justify-content: space-around;margin-right: 40px;
+}
+.container .next .tL .week{
+  display: none;
+} 

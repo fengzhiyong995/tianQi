@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="weather">
+    <view class="taday">
+        <template is="myTemplate" data="{{...tianQi[0]}}"></template>
+    </view>
+    <view class="next">
+        <template is="myTemplate" data="{{...tianQi[1]}}"></template>
+    </view>
+        <view class="next">
+                <template is="myTemplate" data="{{...tianQi[2]}}"></template>
+
+    </view>
+        <view class="next">
+                <template is="myTemplate"  data="{{...tianQi[3]}}"></template>
+
+    </view>
+        <view class="next">
+                <template is="myTemplate"  data="{{...tianQi[4]}}"></template>
+
+    </view>
+  </view>
+</view>
+<template name="myTemplate">
+    <view class="tL">
+      <text class="day">{{day}}</text>
+      <text class="week">{{week}}</text>
+    </view>
+    <view class="tR">
+      <text class="tQ">{{tQ}}</text>
+      <text class="qW">{{qW}}</text>
+    </view>
+</template>
