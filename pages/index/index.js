@@ -38,12 +38,20 @@ Page({
       tQ:'',
       qW:'',
       cY:''
-    },]
+    },],
+    color:['#faa952','#4f4f4f',{one:'#396888',two:'#c5d9ff'},'#f6f6f6'],
+    textColor:['#fefefe','#ddddd3','#ffffff','#111111'],
+    tColor:'',
+    bc:'',
+    bM:[],
+    pp:true,
+    xingQi:['星期一','星期二','星期三','星期四','星期五','星期六','星期日'],
+    image:['qing.png','duoyun.png','yu.png','xue.png'],
+    img:''
   },
-  //事件处理函数
+
   onLoad: function () {
     var that = this;
-    console.log('加载了',this);
     wx:wx.request({
       url: 'http://apis.juhe.cn/simpleWeather/query',
       data:{
@@ -51,7 +59,6 @@ Page({
         city:app.globalData.city,
       },
       success:function(result){
-        console.log('外',result);
         let data = result.data.result.future;
         let ob = [{
           day:'',
@@ -83,7 +90,7 @@ Page({
           tQ:'',
           qW:'',
         }];
-        let k = ['星期一','星期二','星期三','星期四','星期五','星期六','星期日']
+        let k = that.data.xingQi;
         let d = (new Date(data[0].date)).getDay();
         console.log(data,result);
         for(let i in data){
@@ -93,30 +100,40 @@ Page({
           ob[i].tQ = data[i].weather;
           ob[i].qW = data[i].temperature;
           d >= 7?d=1:d++;
-      
-
           that.setData({
             tianQi:ob,
           })
         }
-        console.log(ob);
-
-    
+        let s = data[0].weather;
+        let reg = [/^晴$/,/云$/,/雨/,/雪/];
+        let i = 0;
+        let p = false;
+        let v = 0;
+        reg.forEach(function(e){
+          if(e.test(s)){
+            p = !p;
+            v = i;
+          }
+          if(p){
+            return v ;
+          }
+          i++;
+        })
+        that.newB(v);
       }
     })
 
 
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+  newB:function(v){
+      let y = this.data;
+      let w = y.color;
+      let i = y.image;
+      let t = y.textColor;
+      v !== 2?this.setData({bc:w[v],pp:true,img:i[v],tColor:t[v]}):this.setData({bM:w[v],pp:false,img:i[v],tColor:t[v]});
   },
   wx:wx.setNavigationBarTitle({
-    title: app.globalData.chengShi,
+    title: app.globalData.city + '-天气系统',
   }),
 
 

@@ -1,7 +1,10 @@
 <!--index.wxml-->
 <view class="container">
   <view class="weather">
-    <view class="taday">
+    <view class="taday" style="background-color : {{bc}};color:{{tColor}}" wx:if='{{pp}}'>
+        <template is="myTemplate" data="{{...tianQi[0]}}"></template>
+    </view>
+    <view class="taday" style="background-image : linear-gradient(to left,{{bM.one}},{{bM.two}});color:{{tColor}}" wx:else>
         <template is="myTemplate" data="{{...tianQi[0]}}"></template>
     </view>
     <view class="next">
@@ -26,7 +29,7 @@
       <text class="day">{{day}}</text>
       <text class="week">{{week}}</text>
     </view>
-    <view class="tR">
+    <view class="tR" style = "background-image : url(./images/{{img}})">
       <text class="tQ">{{tQ}}</text>
       <text class="qW">{{qW}}</text>
     </view>

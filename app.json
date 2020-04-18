@@ -4,15 +4,10 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#222"
   },
-  "permission":{
-    "scope.userLocation":{
-     "desc":"你的位置信息将用来查询天气"
-   }
-    },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

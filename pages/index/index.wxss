@@ -1,6 +1,6 @@
 /**index.wxss**/
-:root{
-  font-family: Arial, Helvetica, sans-serif;
+page{
+  background-color: #222;
 }
 .container{
   margin: 0;padding: 0 5px;
@@ -9,8 +9,8 @@
   width: 100%;
 }
 .container .taday{
-  width: 100%;height: 100px;background-color: aqua;margin-bottom: 10px;display: flex;align-items: center;
-  border-radius: 10px;justify-content: space-between;box-sizing: border-box;
+  width: 100%;height: 100px;margin-bottom: 10px;display: flex;align-items: center;
+  border-radius: 10px;justify-content: space-between;box-sizing: border-box;box-shadow: 0 1px 3px #666;
 }
 .container .taday .tL{
   height: 45px;font-weight: 520;font-size: 16px;
@@ -19,13 +19,13 @@
     font-size: 14px;font-weight: 500;
 }
 .container .taday .tR{
-height: 70px;font-size: 26px;font-weight: 520;
+height: 70px;font-size: 26px;font-weight: 520; 
 }
 .container .taday .qW{
   font-size: 16px;font-weight: 500;
 }
 .container .next{
-  width: 100%;height: 80px;background-color: rgb(40, 107, 161);margin-bottom: 3px;border-radius: 7px;display: flex;align-items: center;justify-content: space-between;
+  width: 100%;height: 80px;background-color: rgb(87, 87, 87);margin-bottom: 3px;border-radius: 7px;display: flex;align-items: center;justify-content: space-between;color: rgb(160, 160, 160);
 }
 .container .next .tL{
 height: 35px;font-size: 16px;font-weight: 400;line-height: 35px;
