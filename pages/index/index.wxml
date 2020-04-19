@@ -29,7 +29,7 @@
       <text class="day">{{day}}</text>
       <text class="week">{{week}}</text>
     </view>
-    <view class="tR" style = "background-image : url(./images/{{img}})">
+    <view class="tR">
       <text class="tQ">{{tQ}}</text>
       <text class="qW">{{qW}}</text>
     </view>

@@ -5,17 +5,17 @@ const app = getApp()
 Page({
   data: {
     tianQi:[{
-      day:'4月17号',
-      week:'五',
-      tQ:'晴',
-      qW:'23',
+      day:'',
+      week:'',
+      tQ:'',
+      qW:'',
       cY:''
     },
     {
-      day:'4月18号',
+      day:'',
       week:'',
-      tQ:'多云',
-      qW:'22',
+      tQ:'',
+      qW:'',
       cY:''
     },
     {
@@ -45,9 +45,7 @@ Page({
     bc:'',
     bM:[],
     pp:true,
-    xingQi:['星期一','星期二','星期三','星期四','星期五','星期六','星期日'],
-    image:['qing.png','duoyun.png','yu.png','xue.png'],
-    img:''
+    xingQi:['星期日','星期一','星期二','星期三','星期四','星期五','星期六'],
   },
 
   onLoad: function () {
@@ -92,11 +90,9 @@ Page({
         }];
         let k = that.data.xingQi;
         let d = (new Date(data[0].date)).getDay();
-        console.log(data,result);
         for(let i in data){
-          console.log(i,data[i]);
           ob[i].day = data[i].date;
-          ob[i].week = d < 8?k[d-1]:k[0];
+          ob[i].week = k[d];
           ob[i].tQ = data[i].weather;
           ob[i].qW = data[i].temperature;
           d >= 7?d=1:d++;
@@ -128,9 +124,8 @@ Page({
   newB:function(v){
       let y = this.data;
       let w = y.color;
-      let i = y.image;
       let t = y.textColor;
-      v !== 2?this.setData({bc:w[v],pp:true,img:i[v],tColor:t[v]}):this.setData({bM:w[v],pp:false,img:i[v],tColor:t[v]});
+      v !== 2?this.setData({bc:w[v],pp:true,tColor:t[v]}):this.setData({bM:w[v],pp:false,tColor:t[v]});
   },
   wx:wx.setNavigationBarTitle({
     title: app.globalData.city + '-天气系统',

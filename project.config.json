@@ -21,11 +21,12 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"nodeModules": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.0",
-	"appid": "wx0997971f887d5d6a",
+	"appid": "wxadebe49b719f5fe2",
 	"projectname": "weather",
 	"debugOptions": {
 		"hidedInDevtools": []
